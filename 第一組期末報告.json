@@ -1,0 +1,958 @@
+[
+    {
+        "id": "d75771fd783de006",
+        "type": "file in",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "filename": "\\Users\\User\\Desktop\\WO\\messageImage_1704299215699.jpg",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "base64",
+        "allProps": false,
+        "x": 450,
+        "y": 700,
+        "wires": [
+            [
+                "4cc2b28728892b37"
+            ]
+        ]
+    },
+    {
+        "id": "8d6810c0ea7843bd",
+        "type": "inject",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "62473fb8a6f63ba6"
+            ]
+        ]
+    },
+    {
+        "id": "62473fb8a6f63ba6",
+        "type": "file in",
+        "z": "1aa2c56f1826db06",
+        "name": "read a spreadsheet file as binary buffer",
+        "filename": "\\Users\\User\\Desktop\\WO\\test.xlsx",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "allProps": false,
+        "x": 380,
+        "y": 80,
+        "wires": [
+            [
+                "aa8306e37dee76b0"
+            ]
+        ]
+    },
+    {
+        "id": "00559f09350e3b44",
+        "type": "debug",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.SheetNames",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "99ef46a83d271ec3",
+        "type": "debug",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 660,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "70d3b622603ae7dd",
+        "type": "debug",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "79e486e888e94bbf",
+        "type": "debug",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 660,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "aa8306e37dee76b0",
+        "type": "book",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "raw": false,
+        "x": 280,
+        "y": 140,
+        "wires": [
+            [
+                "00559f09350e3b44",
+                "6c15772f77cc108f"
+            ]
+        ]
+    },
+    {
+        "id": "6c15772f77cc108f",
+        "type": "sheet",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "sheetName": "測試",
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "fef9426c8d968e27",
+                "c4f7a59021e31d1b",
+                "79e486e888e94bbf"
+            ]
+        ]
+    },
+    {
+        "id": "fef9426c8d968e27",
+        "type": "cell",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "address": "A1",
+        "dataType": "w",
+        "x": 460,
+        "y": 260,
+        "wires": [
+            [
+                "99ef46a83d271ec3"
+            ]
+        ]
+    },
+    {
+        "id": "c4f7a59021e31d1b",
+        "type": "sheet-to-json",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "raw": "false",
+        "range": "A2:G55",
+        "header": "1",
+        "blankrows": false,
+        "x": 460,
+        "y": 340,
+        "wires": [
+            [
+                "70d3b622603ae7dd",
+                "b3c4a22733ba91f6"
+            ]
+        ]
+    },
+    {
+        "id": "b3c4a22733ba91f6",
+        "type": "ui_table",
+        "z": "1aa2c56f1826db06",
+        "group": "c5c131aeca9ed7a4",
+        "name": "",
+        "order": 5,
+        "width": "20",
+        "height": "15",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 670,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "18e58f7ebd4ab9ef",
+        "type": "file in",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "filename": "\\Users\\User\\Desktop\\WO\\messageImage_1704299226508.jpg",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "base64",
+        "allProps": false,
+        "x": 450,
+        "y": 420,
+        "wires": [
+            [
+                "460df72fce10060f"
+            ]
+        ]
+    },
+    {
+        "id": "37e1fdfd93e5faea",
+        "type": "inject",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 420,
+        "wires": [
+            [
+                "18e58f7ebd4ab9ef",
+                "3e2bdcc2a484426b"
+            ]
+        ]
+    },
+    {
+        "id": "460df72fce10060f",
+        "type": "ui_template",
+        "z": "1aa2c56f1826db06",
+        "group": "f25b7a78d5b8d204",
+        "name": "",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "format": "<img src=\"data:image/jepg;base64,{{msg.payload}}\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 940,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e6304db34b9b0ca6",
+        "type": "file in",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "filename": "\\Users\\User\\Desktop\\WO\\messageImage_1704299238619.jpg",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "base64",
+        "allProps": false,
+        "x": 450,
+        "y": 560,
+        "wires": [
+            [
+                "09855806f72444ae"
+            ]
+        ]
+    },
+    {
+        "id": "c47d44be2548f1ce",
+        "type": "inject",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 560,
+        "wires": [
+            [
+                "e6304db34b9b0ca6",
+                "704f3c9f4fb6dc58"
+            ]
+        ]
+    },
+    {
+        "id": "09855806f72444ae",
+        "type": "ui_template",
+        "z": "1aa2c56f1826db06",
+        "group": "6ddaa50b269a70e1",
+        "name": "",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "format": "<img src=\"data:image/jepg;base64,{{msg.payload}}\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 940,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e2bdcc2a484426b",
+        "type": "ui_button",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "group": "f25b7a78d5b8d204",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "投票",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 480,
+        "wires": [
+            [
+                "14fd7a7e53b32ebd"
+            ]
+        ]
+    },
+    {
+        "id": "14fd7a7e53b32ebd",
+        "type": "ui_toast",
+        "z": "1aa2c56f1826db06",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "支持",
+        "cancel": "取消",
+        "raw": false,
+        "className": "",
+        "topic": "支持2號民進黨賴清德與蕭美琴",
+        "name": "",
+        "x": 410,
+        "y": 480,
+        "wires": [
+            [
+                "08c7e2c2bc02d62a"
+            ]
+        ]
+    },
+    {
+        "id": "704f3c9f4fb6dc58",
+        "type": "ui_button",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "group": "6ddaa50b269a70e1",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "投票",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 620,
+        "wires": [
+            [
+                "124aa01af0e2cc21"
+            ]
+        ]
+    },
+    {
+        "id": "124aa01af0e2cc21",
+        "type": "ui_toast",
+        "z": "1aa2c56f1826db06",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "支持",
+        "cancel": "取消",
+        "raw": false,
+        "className": "",
+        "topic": "支持3號國民黨侯友宜與趙少康",
+        "name": "",
+        "x": 410,
+        "y": 620,
+        "wires": [
+            [
+                "02dc69c59b226086"
+            ]
+        ]
+    },
+    {
+        "id": "08c7e2c2bc02d62a",
+        "type": "switch",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "支持",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "取消",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 590,
+        "y": 480,
+        "wires": [
+            [
+                "f85230db5b0196e2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f85230db5b0196e2",
+        "type": "function",
+        "z": "1aa2c56f1826db06",
+        "name": "function 10",
+        "func": "var c=msg.payload;\nvar count = context.counter || 0;\nif(c==\"支持\")\n{\n count+=1;\n}\nif(c==\"取消\")\n{\n    count=count;\n}\n\ncontext.counter = count;\nmsg.payload=count;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 480,
+        "wires": [
+            [
+                "9b199673599450fd",
+                "994a4716ca38534c"
+            ]
+        ]
+    },
+    {
+        "id": "9b199673599450fd",
+        "type": "ui_text",
+        "z": "1aa2c56f1826db06",
+        "group": "f25b7a78d5b8d204",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "票數:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "994a4716ca38534c",
+        "type": "ui_chart",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "group": "f25b7a78d5b8d204",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5738aff3a51da6e5",
+        "type": "ui_chart",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "group": "6ddaa50b269a70e1",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "411c0c96cf0ca56a",
+        "type": "ui_text",
+        "z": "1aa2c56f1826db06",
+        "group": "6ddaa50b269a70e1",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "票數:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "6970b2616ef3c348",
+        "type": "function",
+        "z": "1aa2c56f1826db06",
+        "name": "function 11",
+        "func": "var c=msg.payload;\nvar count = context.counter || 0;\nif(c==\"支持\")\n{\n count+=1;\n}\nif(c==\"取消\")\n{\n    count=count;\n}\n\ncontext.counter = count;\nmsg.payload=count;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 620,
+        "wires": [
+            [
+                "411c0c96cf0ca56a",
+                "5738aff3a51da6e5"
+            ]
+        ]
+    },
+    {
+        "id": "02dc69c59b226086",
+        "type": "switch",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "支持",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "取消",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 590,
+        "y": 620,
+        "wires": [
+            [
+                "6970b2616ef3c348"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4cc2b28728892b37",
+        "type": "ui_template",
+        "z": "1aa2c56f1826db06",
+        "group": "5181f423e38c1e47",
+        "name": "",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "format": "<img src=\"data:image/jepg;base64,{{msg.payload}}\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 940,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5d5ad5203b7e6f2e",
+        "type": "ui_text",
+        "z": "1aa2c56f1826db06",
+        "group": "5181f423e38c1e47",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "票數:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "ce4b8aff7c600182",
+        "type": "ui_chart",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "group": "5181f423e38c1e47",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3540e9d053f85642",
+        "type": "function",
+        "z": "1aa2c56f1826db06",
+        "name": "function 12",
+        "func": "var c=msg.payload;\nvar count = context.counter || 0;\nif(c==\"支持\")\n{\n count+=1;\n}\nif(c==\"取消\")\n{\n    count=count;\n}\n\ncontext.counter = count;\nmsg.payload=count;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 760,
+        "wires": [
+            [
+                "5d5ad5203b7e6f2e",
+                "ce4b8aff7c600182"
+            ]
+        ]
+    },
+    {
+        "id": "369ed115491d805a",
+        "type": "switch",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "支持",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "取消",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 590,
+        "y": 760,
+        "wires": [
+            [
+                "3540e9d053f85642"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8ed2e43f57f97a5d",
+        "type": "ui_toast",
+        "z": "1aa2c56f1826db06",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "支持",
+        "cancel": "取消",
+        "raw": false,
+        "className": "",
+        "topic": "支持1號民眾黨柯文哲與吳欣盈",
+        "name": "",
+        "x": 410,
+        "y": 760,
+        "wires": [
+            [
+                "369ed115491d805a"
+            ]
+        ]
+    },
+    {
+        "id": "34b195cc04ccdb83",
+        "type": "ui_button",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "group": "5181f423e38c1e47",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "投票",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 270,
+        "y": 760,
+        "wires": [
+            [
+                "8ed2e43f57f97a5d"
+            ]
+        ]
+    },
+    {
+        "id": "48417bd9e38b76a7",
+        "type": "inject",
+        "z": "1aa2c56f1826db06",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 700,
+        "wires": [
+            [
+                "d75771fd783de006",
+                "34b195cc04ccdb83"
+            ]
+        ]
+    },
+    {
+        "id": "c5c131aeca9ed7a4",
+        "type": "ui_group",
+        "name": "各組織名調調查",
+        "tab": "472da6bc0741e6ba",
+        "order": 4,
+        "disp": true,
+        "width": "20",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f25b7a78d5b8d204",
+        "type": "ui_group",
+        "name": "賴清德",
+        "tab": "472da6bc0741e6ba",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6ddaa50b269a70e1",
+        "type": "ui_group",
+        "name": "侯友宜",
+        "tab": "472da6bc0741e6ba",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5181f423e38c1e47",
+        "type": "ui_group",
+        "name": "柯文哲",
+        "tab": "472da6bc0741e6ba",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "472da6bc0741e6ba",
+        "type": "ui_tab",
+        "name": "總統大選即時線上民調&投票系統",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
